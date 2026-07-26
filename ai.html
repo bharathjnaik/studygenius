@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyGenius AI Assistant</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
+}
+
+.header{
+background:#1e293b;
+padding:20px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+.chat{
+height:65vh;
+overflow-y:auto;
+padding:15px;
+}
+
+.bot,.user{
+padding:12px;
+margin:10px 0;
+border-radius:12px;
+max-width:80%;
+}
+
+.bot{
+background:#1e293b;
+}
+
+.user{
+background:#2563eb;
+margin-left:auto;
+text-align:right;
+}
+
+.input-area{
+display:flex;
+padding:10px;
+background:#1e293b;
+}
+
+input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:10px;
+font-size:16px;
+}
+
+button{
+margin-left:10px;
+padding:12px 20px;
+border:none;
+border-radius:10px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+🤖 StudyGenius AI Assistant
+</div>
+
+<div class="chat" id="chat">
+
+<div class="bot">
+Hello! 👋<br>
+Ask me about study tips, programming, or exam preparation.
+</div>
+
+</div>
+
+<div class="input-area">
+
+<input
+type="text"
+id="question"
+placeholder="Ask a question...">
+
+<button onclick="reply()">Send</button>
+
+</div>
+
+<script>
+
+function reply(){
+
+let q=document.getElementById("question").value;
+
+if(q=="") return;
+
+let chat=document.getElementById("chat");
+
+chat.innerHTML +=
+'<div class="user">'+q+'</div>';
+
+let answer="I'm still learning. This feature will be connected to a real AI later.";
+
+q=q.toLowerCase();
+
+if(q.includes("python"))
+answer="Python is a beginner-friendly programming language used for AI, web development, and automation.";
+
+else if(q.includes("html"))
+answer="HTML is used to create the structure of web pages.";
+
+else if(q.includes("css"))
+answer="CSS is used to style web pages and make them look attractive.";
+
+else if(q.includes("javascript"))
+answer="JavaScript adds interactivity to websites.";
+
+else if(q.includes("study"))
+answer="Study for 45-50 minutes, take a 10-minute break, and revise regularly.";
+
+chat.innerHTML +=
+'<div class="bot">'+answer+'</div>';
+
+document.getElementById("question").value="";
+
+chat.scrollTop=chat.scrollHeight;
+
+}
+
+</script>
+
+</body>
+</html>
+<a href="dashboard.html">🏠 Back to Dashboard</a>

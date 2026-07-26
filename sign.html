@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyGenius AI - Sign Up</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="card">
+
+<h1>📚 StudyGenius AI</h1>
+<h2>Create Account</h2>
+
+<input type="text" id="name" placeholder="Full Name">
+
+<input type="email" id="email" placeholder="Email">
+
+<input type="password" id="password" placeholder="Password">
+
+<input type="password" id="confirm" placeholder="Confirm Password">
+
+<button onclick="signup()">Create Account</button>
+
+<p>Already have an account?
+<a href="login.html">Login</a>
+</p>
+
+</div>
+
+<script>
+
+function signup(){
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let password=document.getElementById("password").value;
+let confirm=document.getElementById("confirm").value;
+
+if(name=="" || email=="" || password=="" || confirm==""){
+alert("Please fill all fields");
+return;
+}
+
+if(password!=confirm){
+alert("Passwords do not match");
+return;
+}
+
+alert("Account Created Successfully!");
+
+window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+</html>
+<button onclick="location.href='dashboard.html'">
+Sign Up
+</button>
+<a href="dashboard.html">🏠 Back to Dashboard</a>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyGenius AI - Progress Tracker</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
+}
+
+.container{
+max-width:500px;
+margin:30px auto;
+background:#1e293b;
+padding:20px;
+border-radius:20px;
+}
+
+h1{
+text-align:center;
+color:#38bdf8;
+}
+
+.card{
+background:#334155;
+padding:15px;
+border-radius:12px;
+margin:15px 0;
+}
+
+.progress{
+width:100%;
+height:20px;
+background:#475569;
+border-radius:20px;
+overflow:hidden;
+}
+
+.bar{
+height:100%;
+width:0%;
+background:#38bdf8;
+transition:0.5s;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+background:#2563eb;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+.stats{
+display:flex;
+justify-content:space-between;
+margin-top:15px;
+font-size:18px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📊 Study Progress</h1>
+
+<div class="card">
+
+<h3>Today's Goal</h3>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+<p id="percent">0% Completed</p>
+
+<button onclick="increase()">Complete Study Session</button>
+
+</div>
+
+<div class="card">
+
+<div class="stats">
+<span>📚 Subjects</span>
+<span>5</span>
+</div>
+
+<div class="stats">
+<span>📝 Notes</span>
+<span>12</span>
+</div>
+
+<div class="stats">
+<span>✅ Tasks Completed</span>
+<span id="tasks">0</span>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let progress=0;
+
+function increase(){
+
+if(progress<100){
+  <a href="dashboard.html">🏠 Back to Dashboard</a>

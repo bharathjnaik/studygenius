@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyGenius AI - Exam Countdown</title>
+
+<style>
+
+body{
+margin:0;
+background:#0f172a;
+font-family:Arial,sans-serif;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+width:90%;
+max-width:400px;
+background:#1e293b;
+padding:25px;
+border-radius:20px;
+text-align:center;
+}
+
+h1{
+color:#38bdf8;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:15px 0;
+border:none;
+border-radius:10px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#334155;
+border-radius:10px;
+font-size:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📅 Exam Countdown</h1>
+
+<input type="text" id="subject" placeholder="Subject Name">
+
+<input type="date" id="examDate">
+
+<button onclick="countdown()">Calculate</button>
+
+<div class="result" id="result">
+
+Select your exam date.
+
+</div>
+
+</div>
+
+<script>
+
+function countdown(){
+
+let subject=document.getElementById("subject").value;
+
+let exam=document.getElementById("examDate").value;
+
+if(subject==""||exam==""){
+alert("Please fill all fields.");
+return;
+}
+
+let today=new Date();
+
+let examDate=new Date(exam);
+
+let diff=examDate-today;
+
+let days=Math.ceil(diff/(1000*60*60*24));
+
+if(days<0){
+
+document.getElementById("result").innerHTML="❌ Exam date has already passed.";
+
+}
+else{
+
+document.getElementById("result").innerHTML=
+"📖 <b>"+subject+"</b><br><br>"+
+"⏳ "+days+" Days Left";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
+<a href="dashboard.html">🏠 Back to Dashboard</a>

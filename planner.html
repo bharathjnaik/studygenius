@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Planner</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
+}
+
+.container{
+max-width:400px;
+margin:30px auto;
+background:#1e293b;
+padding:20px;
+border-radius:20px;
+}
+
+h1{
+text-align:center;
+color:#38bdf8;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:10px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+#output{
+margin-top:20px;
+background:#334155;
+padding:15px;
+border-radius:10px;
+line-height:1.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📚 Study Planner</h1>
+
+<input type="text" id="subject" placeholder="Enter Subject">
+
+<input type="date" id="exam">
+
+<input type="number" id="hours" placeholder="Study Hours Per Day">
+
+<button onclick="planStudy()">Generate Study Plan</button>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+function planStudy(){
+
+let subject=document.getElementById("subject").value;
+let exam=document.getElementById("exam").value;
+let hours=document.getElementById("hours").value;
+
+if(subject==""||exam==""||hours==""){
+alert("Please fill all fields");
+return;
+}
+
+document.getElementById("output").innerHTML=
+"<h3>📖 Your Study Plan</h3>"+
+"<b>Subject:</b> "+subject+"<br><br>"+
+"<b>Exam Date:</b> "+exam+"<br><br>"+
+"<b>Daily Study:</b> "+hours+" Hours<br><br>"+
+"✅ Revise yesterday's topics.<br>"+
+"✅ Learn one new chapter daily.<br>"+
+"✅ Practice MCQs for 30 minutes.<br>"+
+"✅ Take a short break every 50 minutes.<br>"+
+"🎯 Good Luck!";
+
+}
+
+</script>
+
+</body>
+</html>
+<a href="dashboard.html">🏠 Back to Dashboard</a>
